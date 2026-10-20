@@ -1,0 +1,257 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SecureFix Vulnerable Demo Fixture",
+          "rules": [
+            {
+              "id": "SFV-001",
+              "name": "BrokenObjectAuthorization",
+              "shortDescription": {
+                "text": "Task lookup does not enforce synthetic owner scope."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "SFV-002",
+              "name": "SqlQueryConcatenation",
+              "shortDescription": {
+                "text": "Task search builds a read-only SQL query by concatenating input."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "SFV-003",
+              "name": "DynamicEvaluation",
+              "shortDescription": {
+                "text": "Report filter helper evaluates a harmless demo expression dynamically."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "SFV-004",
+              "name": "PermissiveCors",
+              "shortDescription": {
+                "text": "CORS configuration uses wildcard origins."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "SFV-005",
+              "name": "VerboseErrorResponse",
+              "shortDescription": {
+                "text": "Controlled error response includes a synthetic diagnostic field."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "SFV-006",
+              "name": "MissingSecurityHeaders",
+              "shortDescription": {
+                "text": "Defensive response headers are not configured."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "SFV-007",
+              "name": "FakeHardcodedCredential",
+              "shortDescription": {
+                "text": "A nonfunctional fake credential-like value is present for scanner testing."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              }
+            },
+            {
+              "id": "SFV-008",
+              "name": "VersionDisclosure",
+              "shortDescription": {
+                "text": "Demo version metadata is exposed by the application."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "SFV-001",
+          "level": "error",
+          "message": {
+            "text": "Task lookup does not enforce synthetic owner scope."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app/main.py"
+                },
+                "region": {
+                  "startLine": 138,
+                  "endLine": 141
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SFV-002",
+          "level": "error",
+          "message": {
+            "text": "Task search builds a read-only SQL query by concatenating input."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app/services.py"
+                },
+                "region": {
+                  "startLine": 73,
+                  "endLine": 77
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SFV-003",
+          "level": "error",
+          "message": {
+            "text": "Report filter helper evaluates a harmless demo expression dynamically."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app/services.py"
+                },
+                "region": {
+                  "startLine": 138,
+                  "endLine": 138
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SFV-004",
+          "level": "warning",
+          "message": {
+            "text": "CORS configuration uses wildcard origins."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app/main.py"
+                },
+                "region": {
+                  "startLine": 43,
+                  "endLine": 49
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SFV-005",
+          "level": "warning",
+          "message": {
+            "text": "Controlled error response includes a synthetic diagnostic field."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app/main.py"
+                },
+                "region": {
+                  "startLine": 72,
+                  "endLine": 79
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SFV-006",
+          "level": "warning",
+          "message": {
+            "text": "Defensive response headers are not configured."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app/main.py"
+                },
+                "region": {
+                  "startLine": 56,
+                  "endLine": 60
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SFV-007",
+          "level": "note",
+          "message": {
+            "text": "A nonfunctional fake credential-like value is present for scanner testing."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app/config.py"
+                },
+                "region": {
+                  "startLine": 6,
+                  "endLine": 6
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SFV-008",
+          "level": "note",
+          "message": {
+            "text": "Demo version metadata is exposed by the application."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app/main.py"
+                },
+                "region": {
+                  "startLine": 88,
+                  "endLine": 93
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
